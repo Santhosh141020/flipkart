@@ -7,7 +7,6 @@ def getContours(img, imgContour):
     for cnt in contours:
         print(len(cnt))
         cv2.drawContours(imgContour, cnt, -1, (255, 0, 255), 7)
-        break
     print(len(contours))
 
 img = cv2.imread('arena_pic.jpg')
@@ -32,6 +31,6 @@ conc = np.concatenate((img_gry, img_blur), axis=1)
 conc1 = np.concatenate((img_cny, imgDil), axis=1)
 finalImg = np.concatenate((conc, conc1), axis=0)
 cv2.imshow('Counters', imgContour)
-cv2.imshow('wait', imgContour)
+cv2.imshow('wait', finalImg)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
